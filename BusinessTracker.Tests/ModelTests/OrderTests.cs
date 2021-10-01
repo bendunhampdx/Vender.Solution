@@ -27,6 +27,20 @@ namespace BusinessTracker.Tests
       //Assert
       Assert.AreEqual(description, result);
     }
+    [TestMethod]
+    public void SetDescription_SetDescription_String()
+    {
+      //Arrange
+      string description = "1 pastry";
+      Order newOrder = new Order(description);
 
+      //Act
+      string updatedDescription = "1 loaf of bread";
+      newOrder.Description = updatedDescription;
+      string result = newOrder.Description;
+
+      //Assert
+      Assert.AreEqual(updatedDescription, result);
+    }
   }
 }
