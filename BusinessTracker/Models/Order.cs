@@ -1,4 +1,4 @@
-namespace FileName.Models
+namespace BusinessTracker.Models
 {
   public class NameThis
   {

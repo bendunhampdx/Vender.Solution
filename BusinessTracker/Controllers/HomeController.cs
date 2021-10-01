@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using FileName.Models;
+using BusinessTracker.Models;
 
-namespace FileName.Controllers
+namespace BusinessTracker.Controllers
 {
   public class HomeController : Controller
   {

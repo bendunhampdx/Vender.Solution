@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FileName.Models;
+using BusinessTracker.Models;
 
-namespace FileName.Tests
+namespace BusinessTracker.Tests
 {
   [TestClass]
   public class ItemTests
