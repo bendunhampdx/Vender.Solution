@@ -17,28 +17,37 @@ namespace BusinessTracker.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("test");
+      Order newOrder = new Order("test", "test", 2, "test");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
     [TestMethod]
-    public void GetDescription_ReturnsDescription_String()
+    public void GetProperties_ReturnsProperties_String()
     {
       //Arrange
+      string title = "Ben's Cafe";
       string description = "1 pastry";
+      int price = 2;
+      string date = "October 1st, 2021";
 
       //Act
-      Order newOrder = new Order(description);
-      string result = newOrder.Description;
+      Order newOrder = new Order(title, description, price, date);
+      string result1 = newOrder.Title;
+      string result2 = newOrder.Description;
+      int result3 = newOrder.Price;
+      string result4 = newOrder.Date;
 
       //Assert
-      Assert.AreEqual(description, result);
+      Assert.AreEqual(title, result1);
+      Assert.AreEqual(description, result2);
+      Assert.AreEqual(price, result3);
+      Assert.AreEqual(date, result4);
     }
     [TestMethod]
     public void SetDescription_SetDescription_String()
     {
       //Arrange
       string description = "1 pastry";
-      Order newOrder = new Order(description);
+      Order newOrder = new Order(title, description, price, date);
 
       //Act
       string updatedDescription = "1 loaf of bread";
