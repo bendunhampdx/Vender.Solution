@@ -78,22 +78,22 @@ namespace BusinessTracker.Tests
       // Assert
       Assert.AreEqual(newVendor2, result);
     }
-    // [TestMethod]
-    // public void AddOrder_AssociatesOrderWithVendor_OrderList()
-    // {
-    //   // Arrange
-    //   string description = "pastry";
-    //   Order newOrder = new Order(description);
-    //   List<Order> newList = new List<Order> { newOrder };
-    //   string name = "Ben's Cafe";
-    //   Vendor newVendor = new Vendor(name);
-    //   newVendor.AddOrder(newOrder);
+    [TestMethod]
+    public void AddOrder_AssociatesOrderWithVendor_OrderList()
+    {
+      // Arrange
+      string description = "1 pastry";
+      Order newOrder = new Order(description);
+      List<Order> newList = new List<Order> { newOrder };
+      string name = "Ben's Cafe";
+      Vendor newVendor = new Vendor(name);
+      newVendor.AddOrder(newOrder);
 
-    //   // Act
-    //   List<Order> result = newVendor.Orders;
+      // Act
+      List<Order> result = newVendor.Orders;
 
-    //   // Assert
-    //   CollectionAssert.AreEqual(newList, result);
-    // }
+      // Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
