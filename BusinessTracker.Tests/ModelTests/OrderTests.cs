@@ -1,15 +1,18 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BusinessTracker.Models;
+using System.Collections.Generic;
+using System;
 
 namespace BusinessTracker.Tests
 {
   [TestClass]
-  public class ItemTests
+  public class OrderTests
   {
     [TestMethod]
-    public void NameOfMethod_DescribeBehavior_ExpectedResult()
+    public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-
+      Order newOrder = new Order("test");
+      Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
   }
