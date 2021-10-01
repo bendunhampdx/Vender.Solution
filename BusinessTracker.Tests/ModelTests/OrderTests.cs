@@ -89,5 +89,20 @@ namespace BusinessTracker.Tests
       //Assert
       Assert.AreEqual(1, result);
     }
+    [TestMethod]
+    public void Find_ReturnsCorrectOrder_Order()
+    {
+      //Arrange
+      string description01 = "1 pastry";
+      string description02 = "1 loaf of bread";
+      Order newOrder1 = new Order(description01);
+      Order newOrder2 = new Order(description02);
+
+      //Act
+      Order result = Order.Find(2);
+
+      //Assert
+      Assert.AreEqual(newOrder2, result);
+    }
   }
 }
