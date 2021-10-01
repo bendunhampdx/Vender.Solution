@@ -1,15 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
-using BusinessOrganizer.Models;
+using BusinessTracker.Models;
 using System.Collections.Generic;
 
-namespace BusinessOrganizer.Controllers
+namespace BusinessTracker.Controllers
 {
   public class VendorsController : Controller
   {
     [HttpGet("/vendors")]
     public ActionResult Index()
     {
-      List<Vendor> allVendors = VendorsController.GetAll();
+      List<Vendor> allVendors = Vendor.GetAll();
       return View(allVendors);
     }
     [HttpGet("/vendors/new")]
@@ -27,19 +27,19 @@ namespace BusinessOrganizer.Controllers
     public ActionResult Show(int id)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
-      Vendor selectedVendor = VendorsController.Find(id);
-      List<Order> vendorOrder = selectedVendor.Orders;
+      Vendor selectedVendor = Vendor.Find(id);
+      List<Order> vendorOrders = selectedVendor.Orders;
       model.Add("vendor", selectedVendor);
-      model.Add("order", selectedOrders);
+      model.Add("order", vendorOrders);
       return View(model);
     }
 
     [HttpPost("/vendors/{vendorId}/orders")]
-    public ActionResult Create(int vendorId, string orderDescription)
+    public ActionResult Create(int vendorId, string orderTitle, string orderDescription, int orderPrice, string orderDate)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor foundVendor = Vendor.Find(vendorId);
-      Order newOrder = new Order(orderDescription);
+      Order newOrder = new Order(orderTitle, orderDescription, orderPrice, orderDate);
       foundVendor.AddOrder(newOrder);
       List<Order> vendorOrders = foundVendor.Orders;
       model.Add("orders", vendorOrders);

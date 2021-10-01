@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace BusinessOrganizer
+namespace BusinessTracker
 {
   public class Startup
   {
@@ -33,6 +33,7 @@ namespace BusinessOrganizer
         routes.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
       });
       app.UseStaticFiles();
+      
       app.Run(async (context) =>
       {
         await context.Response.WriteAsync("Hello World!");

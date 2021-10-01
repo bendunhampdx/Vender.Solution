@@ -1,15 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
-using BusinessOrganizer.Models;
+using BusinessTracker.Models;
 using System.Collections.Generic;
 
-namespace BusinessOrganizer.Controllers
+namespace BusinessTracker.Controllers
 {
   public class OrdersController : Controller
   {
     [HttpGet("/venders/{vendorId}/orders/new")]
     public ActionResult New(int vendorId)
     {
-      Vendors vendor = Vendor.Find(vendorId);
+      Vendor vendor = Vendor.Find(vendorId);
       return View(vendor);
     }
     [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
@@ -23,10 +23,10 @@ namespace BusinessOrganizer.Controllers
       return View(model);
     }
 
-    [HttpPost("/items/delete")]
+    [HttpPost("/orders/delete")]
     public ActionResult DeleteAll()
     {
-      Item.ClearAll();
+      Order.ClearAll();
       return View();
     }
 
