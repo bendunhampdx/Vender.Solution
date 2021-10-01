@@ -82,8 +82,11 @@ namespace BusinessTracker.Tests
     public void AddOrder_AssociatesOrderWithVendor_OrderList()
     {
       // Arrange
+      string title = "Ben's Cafe";
       string description = "1 pastry";
-      Order newOrder = new Order(description);
+      int price = 2;
+      string date = "October 1st, 2021";
+      Order newOrder = new Order(title, description, price, date);
       List<Order> newList = new List<Order> { newOrder };
       string name = "Ben's Cafe";
       Vendor newVendor = new Vendor(name);
