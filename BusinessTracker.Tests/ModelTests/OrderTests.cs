@@ -6,8 +6,14 @@ using System;
 namespace BusinessTracker.Tests
 {
   [TestClass]
-  public class OrderTests
+  public class OrderTests : IDisposable
   {
+
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
+
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
@@ -52,6 +58,22 @@ namespace BusinessTracker.Tests
       List<Order> result = Order.GetAll();
 
       // Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
+    [TestMethod]
+    public void GetAll_ReturnsOrders_OrderList()
+    {
+      //Arrange
+      string description01 = "1 pastry";
+      string description02 = "1 loaf of bread";
+      Order newOrder1 = new Order(description01);
+      Order newOrder2 = new Order(description02);
+      List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+
+      //Act
+      List<Order> result = Order.GetAll();
+
+      //Assert
       CollectionAssert.AreEqual(newList, result);
     }
   }
