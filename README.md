@@ -2,7 +2,7 @@
 
 #### short description of the app
 
-#### Created By: Chynna Lew
+#### Created By: Ben Dunham
 
 ## Technologies Used
 
@@ -45,9 +45,9 @@ Detailed description
 ### License
 
 [MIT License](https://opensource.org/licenses/MIT)
-Copyright 2021 Chynna Lew
+Copyright 2021 Ben Dunham
 
 ## Support and contact details
 
-* [Chynna Lew](github.com/chynnalew) 
-* <ChynnaLew@yahoo.com>
+* [Ben Dunham](github.com/bendunhampdx) 
+* <bendunhampdx@gmail.com>
