@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using BusinessTracker.Models;
 using System.Collections.Generic;
+using System;
 
 namespace BusinessTracker.Controllers
 {
@@ -45,6 +46,7 @@ namespace BusinessTracker.Controllers
       model.Add("orders", vendorOrders);
       model.Add("vendor", foundVendor);
       return View("Show", model);
+    
     }
   }
 }
