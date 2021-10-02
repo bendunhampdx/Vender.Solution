@@ -1,6 +1,6 @@
-# Name of Project
+# Business Tracker
 
-#### short description of the app
+#### An MVC application to track the vendors that purchase goods from and the order details belonging to those vendors.
 
 #### Created By: Ben Dunham
 
@@ -12,9 +12,6 @@
 * NuGet
 * ASP.NET Core
 
-## Description
-
-Detailed description
 
 ## Setup and Usage Instructions
 
@@ -25,7 +22,7 @@ Detailed description
 
 ### Installation
 
-* Clone [this](github.com/yourName/repoName) repository, or download and open the Zip on your local machine
+* Clone [this](https://github.com/bendunhampdx/Vender.Solution) repository, or download and open the Zip on your local machine
 * Open the FOLDER NAME folder in your preferred text editor
 * Restore and build the project:
   - Navigate to the BusinessTracker.Solutions/BusinessTracker folder in the command line or terminal 
