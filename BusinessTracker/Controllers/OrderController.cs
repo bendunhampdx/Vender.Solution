@@ -25,12 +25,12 @@ namespace BusinessTracker.Controllers
       return View(model);
     }
 
-    // [HttpPost("/orders/delete")]
-    // public ActionResult DeleteAll()
-    // {
-    //   Order.ClearAll();
-    //   return View();
-    // }
+    [HttpPost("/orders/delete")]
+    public ActionResult DeleteAll()
+    {
+      Order.ClearAll();
+      return View();
+    }
   
   }
 }
