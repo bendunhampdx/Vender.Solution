@@ -1,3 +1,4 @@
+
 using System.Collections.Generic;
 
 namespace BusinessTracker.Models
@@ -9,7 +10,7 @@ namespace BusinessTracker.Models
     public int Price { get; set; }
     public string Date { get; set; }
     public int Id { get; }
-    private static List<Order> _instances = new List<Order> { };
+    private static List<Order> _instance = new List<Order> { };
 
     public Order(string title, string description, int price, string date)
     {
@@ -17,21 +18,21 @@ namespace BusinessTracker.Models
       Description = description;
       Price = price;
       Date = date;
-      _instances.Add(this);
-      Id = _instances.Count;
+      _instance.Add(this);
+      Id = _instance.Count;
     }
     public static List<Order> GetAll()
     {
-        return _instances;
+        return _instance;
     }
     public static void ClearAll()
     {
-        _instances.Clear();
+        _instance.Clear();
     }
 
-    public static Order Find(int searchId)
+  public static Order Find(int searchId)
     {
-      return _instances[searchId - 1];
+      return _instance[searchId-1];
     }
   }
 }

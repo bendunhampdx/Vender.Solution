@@ -6,7 +6,7 @@ namespace BusinessTracker.Controllers
 {
   public class OrdersController : Controller
   {
-    [HttpGet("/venders/{vendorId}/orders/new")]
+    [HttpGet("/vendors/{vendorId}/orders/new")]
     public ActionResult New(int vendorId)
     {
       Vendor vendor = Vendor.Find(vendorId);
@@ -34,3 +34,4 @@ namespace BusinessTracker.Controllers
   
   }
 }
+
